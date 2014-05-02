@@ -1,7 +1,6 @@
 (function () {
-   var popup_properties = ['capacity', 'note'];
    var config = {
-    share_id: '557211a6ab5729ea',  // Edit this
+    share_id: 'f2516749743ade47',  // Edit this
     popup_properties: ['capacity', 'note']  // Optional - An array of properties to show in a Leaflet popup
    };
 
@@ -20,8 +19,8 @@
       if (config.popup_properties) {
         var props = feature.properties;
         var infos = [];
-        for (var i=0, len=popup_properties.length; i<len; i++) {
-          var prop = popup_properties[i];
+        for (var i=0, len=config.popup_properties.length; i<len; i++) {
+          var prop = config.popup_properties[i];
           if (prop in props) {
             infos.push('<strong>' + prop + '</strong>: ' + props[prop]);
           }
@@ -60,6 +59,9 @@
   $.ajax({
     url: url,
     type: 'get',
-    success: loadData
+    success: loadData,
+    error: function () {
+      alert('There was a problem loading the share data.');
+    }
   });
 }());
