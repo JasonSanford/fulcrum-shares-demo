@@ -1,6 +1,6 @@
 (function () {
    var config = {
-    share_id: 'f2516749743ade47',  // Edit this
+    share_id: '557211a6ab5729ea',  // Edit this
     popup_properties: ['capacity', 'note']  // Optional - An array of properties to show in a Leaflet popup
    };
 
